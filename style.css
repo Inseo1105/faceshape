@@ -1,59 +1,23 @@
 body {
-  font-family: "휴먼편지체", serif;
+  font-family: 'Jua', sans-serif;
   background-color: #ffffff;
   box-sizing: border-box;
-  color: #674187;
+  color: #000000;
 }
 
-.test11{
-	font-family: "함초롬돋움", serif;
-	color: #000000;
-	font-size: 1.2rem;
-}
-
-.test12{
-	font-family: "함초롬돋움", serif;
-	color: #000000;
-	font-size: 0.9rem;
-}
-
+/* 얼굴사진 등록 */
 .file-upload {
-    padding: 15% 3%;
+    padding: 3% 3%;
     margin: 0 auto;
-    border-radius: 10px;
+    border-radius: 30px;
     border: solid 1.5px #f6f7fa;
     background-color: #f6f7fa;
-}
-.file-upload-btn {
-  width: 100%;
-  margin: 0;
-  color: #fff;
-  background: #1FB264;
-  border: none;
-  padding: 10px;
-  border-radius: 4px;
-  border-bottom: 4px solid #15824B;
-  transition: all .2s ease;
-  outline: none;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.file-upload-btn:hover {
-  background: #1AA059;
-  color: #ffffff;
-  transition: all .2s ease;
-  cursor: pointer;
-}
-
-.file-upload-btn:active {
-  border: 0;
-  transition: all .2s ease;
 }
 
 .file-upload-content {
   display: none;
   text-align: center;
+  font-size:30px;
 }
 #loading {
   display: none;
@@ -86,6 +50,7 @@ body {
     border: 1.5px dashed #ffffff;
 }
 
+/* 다른 사진으로 재시도 */
 .image-title-wrap {
   padding: 0 15px 15px 15px;
   color: #222;
@@ -107,28 +72,10 @@ body {
   padding: 10px;
 }
 
-.try-again-btn {
+.try-again-btn { 
   border-radius: 5px;
   border: solid 1.5px #674187;
   background-color: #674187;
-}
-
-.try-again-btn2 {
-  border-radius: 30px;
-  border: solid 1.5px #4aa09f;
-  background-color: #4aa09f;
-}
-
-.try-again-btn3 {
-  border-radius: 30px;
-  border: solid 1.5px #7d95ab;
-  background-color: #7d95ab;
-}
-
-.try-again-btn4 {
-  border-radius: 30px;
-  border: solid 1.5px #1f7be4;
-  background-color: #1f7be4;
 }
 
 .try-again-text {
@@ -151,16 +98,162 @@ body {
   transition: all .2s ease;
 }
 
-.navbar-light .navbar-brand {
-  line-height: 1.68;
-  text-align: left;
-  color: #674187; 
+.result-message {
+    font-size: 2rem;
 }
 
-.navbar-light .navbar-toggler {
-    border-color: #ffffff;
+
+
+/* 선글라스/안경 버튼 */
+.imgtest{
+
 }
 
+.labels{
+	margin-top:15px;
+	margin-left:30px;
+}
+
+.labelradio{
+	font-size:15px;
+	font-weight:bold;
+	outline: none;
+}
+
+.labelradio > input{
+	display:none;
+}
+
+.labelradio input:checked + .radio_btn{
+	background-color: #6c757d;
+	color:#fff;
+}
+
+.radio_btn{	
+	width: 180px;
+	height: 120px;
+	border-radius: 15px;
+	position: relative;
+	text-align:center;
+	cursor: pointer;
+	background-color: #dde4ea;
+	float: left;
+	margin-top: 10px;	
+}
+
+.radio_btn > img{
+	width:120px;
+	height:90px;
+}
+
+
+.hide{
+	display:none;
+}
+
+.testsize{
+	position:absolute;
+    margin: 0 auto;
+	width: 180px;
+	height:180px;
+	top:140px;
+	left:350px;
+}
+
+.addtest{
+	position:absolute;
+    margin: 0 auto;
+	width: 180px;
+	height:180px;
+	top:140px;
+	left:350px;
+}
+
+/* 선글라스 버튼 */
+label.menu{
+	margin: 20px;
+	padding: 4px;
+}
+input#menu{
+	display:none;
+}
+nav#main_nav{
+	display:none;
+}
+input#menu:checked + nav#main_nav{
+	display: block;
+}
+
+.w-btn-outline {
+    position: relative;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.w-btn-green {
+    background-color: #77af9c;
+    color: #d7fff1;
+}
+
+.w-btn-green-outline {
+    border: 3px solid #77af9c;
+    color: #000;
+}
+
+.w-btn-green-outline:hover {
+    background-color: #77af9c;
+    color: #d7fff1;
+}
+
+/* 안경 버튼 */
+label.menu2{
+	margin: 20px;
+	padding: 4px;
+}
+input#menu2{
+	display:none;
+}
+nav#main_nav2{
+	display:none;
+}
+input#menu2:checked + nav#main_nav2{
+	display: block;
+}
+
+.addimg{
+	width:90px;
+	height:90px;
+}
+
+/* 이미지 추가 */
+.file-upload-input2 {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+/* 마우스 */
+.Move{
+  cursor: cell;
+  position: absolute;
+  background-color: #2196F3;
+  color : white;
+  border: 1px solid #d3d3d3;
+  text-align: center;	
+}
+
+/* 얼굴형 테스트 ~ */
 .section {
     margin-top: 50px;
 }
@@ -178,7 +271,17 @@ body {
   color: #000000;
 }
 
-/* On screens that are 600px or less, set the background color to olive */
+/* 얼굴형 테스트/추천 */
+.navbar-light .navbar-toggler {
+    border-color: #ffffff;
+}
+
+.navbar-light .navbar-brand {
+  line-height: 1.68;
+  text-align: left;
+  color: #674187; 
+}
+
 @media screen and (max-width: 600px) {
   html {
     font-size: 10px;
@@ -188,85 +291,35 @@ body {
     }
 }
 
-
-.youtube-link {
-    font-size: 1.5rem;
-    line-height: 1.71;
-    text-align: center;
-    color: #f73737;
-    text-decoration: underline;
-}
-
-.youtube-link:hover {
-    font-size: 1.5rem;
-    line-height: 1.71;
-    text-align: center;
-    color: #f73737;
-    text-decoration: underline;
-}
-
-.youtube-icon {
-    width: 30px;
-    height: 27.262px;
-}
-
+/* 얼굴사진을 등록해 주세요~ */
 .upload {
     width: 20%;
 }
 
 .upload-text {
-	font-family: "함초롬돋움", serif;
+	font-family: 'Gamja Flower', cursive;
     width: 58%;
-    font-size: 1.5rem;
+    font-size: 2rem;
     line-height: 1.53;
     text-align: center;
     color: #000000;
     margin: 0 auto;
 }
 
+/* 맨아래 CIE졸업작품 */
 .footer {
+	font-family: 'Nanum Pen Script', cursive;
     background-color: initial;
     color: initial;
+	font-size:1.2rem;
 }
 
+/* 퍼센트 박스 */
 .bar-container {
   height: 2.7rem;
 }
-.dinosaur-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2rem;
-  border-radius: 10px;
-  width: 100%;
-  background-color: rgba(117, 204, 84, 0.2);
-}
-.dinosaur-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2rem;
-  border-radius: 10px;
-  background-color: rgba(117, 204, 84, 1);
-}
-.deer-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2rem;
-  border-radius: 10px;
-  width: 100%;
-  background-color: rgba(117, 204, 84, 0.2);
-}
-.deer-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2rem;
-  border-radius: 10px;
-  background-color: rgba(117, 204, 84, 1);
-}
-.dog-box {
+
+.egg-box {
   position: absolute;
   top: 0;
   left: 0;
@@ -275,7 +328,7 @@ body {
   width: 100%;
   background-color: rgba(27, 175, 234, 0.2);
 }
-.dog-bar {
+.egg-bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -283,24 +336,7 @@ body {
   border-radius: 10px;
   background-color: rgba(27, 175, 234, 1);
 }
-.cat-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2rem;
-  border-radius: 10px;
-  width: 100%;
-  background-color: rgba(251, 176, 59, 0.2);
-}
-.cat-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2rem;
-  border-radius: 10px;
-  background-color: rgba(251, 176, 59, 1);
-}
-.bear-box {
+.round-box {
   position: absolute;
   top: 0;
   left: 0;
@@ -309,7 +345,7 @@ body {
   width: 100%;
   background-color: rgba(195, 140, 102, 0.2);
 }
-.bear-bar {
+.round-bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -317,7 +353,24 @@ body {
   border-radius: 10px;
   background-color: rgba(195, 140, 102, 1);
 }
-.fox-box {
+.long-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(117, 204, 84, 0.2);
+}
+.long-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(117, 204, 84, 1);
+}
+.angled-box {
   position: absolute;
   top: 0;
   left: 0;
@@ -326,7 +379,7 @@ body {
   width: 100%;
   background-color: rgba(49, 132, 155, 0.2);
 }
-.fox-bar {
+.angled-bar {
   position: absolute;
   top: 0;
   left: 0;
@@ -334,100 +387,100 @@ body {
   border-radius: 10px;
   background-color: rgba(49, 132, 155, 1);
 }
-.rabbit-box {
+.heart-box {
   position: absolute;
   top: 0;
   left: 0;
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(235, 166, 190, 0.2);
+  background-color: rgba(251, 176, 59, 0.2);
 }
-.rabbit-bar {
+.heart-bar {
   position: absolute;
   top: 0;
   left: 0;
   height: 2rem;
   border-radius: 10px;
-  background-color: rgba(235, 166, 190, 1);
+  background-color: rgba(251, 176, 59, 1);
 }
+
 .percent-text {
   font-size: 1rem;
   color: #ffffff;
 }
-.animal-label {
-    width: 20%;
+.face-label {
+    width: 15%;
     text-align: left;
     height: 2rem;
+	font-size:20px;
 }
 #label-container {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
 }
-.result-message {
-    font-size: 2rem;
-}
-
-
-.animal-explain {
+.face-explain {
     font-size: 1.5rem;
 }
-.dinosaur-animal-title {
+
+.egg-face-title {
     color: #3ba363;
 }
-.dinosaur-animal-celeb {
-    color: #3ba363;
-    font-size: 1.2rem;
-}
-.deer-animal-title {
-    color: #3ba363;
-}
-.deer-animal-celeb {
+.egg-face-celeb {
     color: #3ba363;
     font-size: 1.2rem;
 }
-.cat-animal-title {
+.round-face-title {
+    color: #3ba363;
+}
+.round-face-celeb {
+    color: #3ba363;
+    font-size: 1.2rem;
+}
+.long-face-title {
     color: #ff6c0a;
 }
-.cat-animal-celeb {
+.long-face-celeb {
     color: #ff6c0a;
     font-size: 1.2rem;
 }
-.dog-animal-title {
+.angled-face-title {
     color: #548dd4;
 }
-.dog-animal-celeb {
+.angled-face-celeb {
     color: #548dd4;
     font-size: 1.2rem;
 }
-.rabbit-animal-title {
+.heart-face-title {
     color: #e56995;
 }
-.rabbit-animal-celeb {
+.heart-face-celeb {
     color: #e56995;
-    font-size: 1.2rem;
-}
-.bear-animal-title {
-    color: #9b6b43;
-}
-.bear-animal-celeb {
-    color: #9b6b43;
-    font-size: 1.2rem;
-}
-.fox-animal-title {
-    color: #31849b;
-}
-.fox-animal-celeb {
-    color: #31849b;
     font-size: 1.2rem;
 }
 
-/* gender */
+
+/* 성별을 선택하세요 */
+.gender-text {
+	font-family: 'Gamja Flower', cursive;
+    width: 58%;
+    font-size: 1.8rem;
+    line-height: 1.53;
+    text-align: center;
+    color: #000000;
+    margin: 0 auto;
+}
+.gender-yn {
+	font-family: 'Gamja Flower', cursive;
+	color: #000000;
+	font-size: 1.5rem;
+}
+
 input#gender {
   display: none;
 }
 
-label {
+label.genderyn {
   cursor: pointer;
   display: inline-block;
   width: 90px;
@@ -458,23 +511,6 @@ label {
   left: calc(50% - 2px);
 }
 
-.knob > i:before,
-.knob > i:after {
-  width: 6px;
-  position: absolute;
-  top: 42%;
-  content: "";
-  height: 4px;
-  background-color: #ffffff;
-}
-
-.knob > i:before {
-  left: 4px;
-}
-.knob > i:after {
-  left: -6px;
-}
-
 input:checked + label > .knob {
   box-shadow: 0 0 0 8px #5db76c inset;
   background-color: #e3ffeb;
@@ -483,27 +519,4 @@ input:checked + label > .knob {
 
 input:checked + label > .knob > i {
   background-color: #ffffff;
-}
-
-input:checked + label > .knob > i:after,
-input:checked + label > .knob > i:before {
-  background-color: #ffffff;
-}
-
-input:checked + label > .knob > i:after {
-  top: 14.5px;
-  width: 12px;
-  left: -7px;
-  transform: rotate(45deg);
-}
-input:checked + label > .knob > i:before {
-  top: 13px;
-  width: 12px;
-  left: 0px;
-  transform: rotate(134deg);
-}
-
-.ad-banner {
-    width: 320px;
-    margin: 0 auto;
 }
