@@ -50,9 +50,16 @@ body {
     border: 1.5px dashed #ffffff;
 }
 
+.spinner-border{
+	width: 3rem;
+	height: 3rem; 
+	color:#674187;
+}
+
+
 /* 다른 사진으로 재시도 */
 .image-title-wrap {
-  padding: 0 15px 15px 15px;
+  padding: 5px 15px 15px 15px;
   color: #222;
 }
 
@@ -62,7 +69,6 @@ body {
 
 .drag-text h3 {
   font-weight: 500;
-  text-transform: uppercase;
 }
 
 .file-upload-image {
@@ -74,8 +80,14 @@ body {
 
 .try-again-btn { 
   border-radius: 5px;
-  border: solid 1.5px #674187;
-  background-color: #674187;
+  border:3px solid #230040;
+  background-color: #230040;
+  width: 31.5rem;
+  transition:all 0.8s;
+}
+
+.try-again-btn:hover{
+	background-color: #10001e;
 }
 
 .try-again-text {
@@ -100,23 +112,18 @@ body {
 
 .result-message {
     font-size: 2rem;
+	margin:0px;
 }
 
 
 
-/* 선글라스/안경 버튼 */
-.imgtest{
-
-}
-
+/* 퍼센트, 선글라스,안경 이미지 버튼 */
 .labels{
-	margin-top:15px;
-	margin-left:30px;
+	margin-top:-20px;
 }
 
 .labelradio{
-	font-size:15px;
-	font-weight:bold;
+	font-size: 1.2rem;
 	outline: none;
 }
 
@@ -125,25 +132,26 @@ body {
 }
 
 .labelradio input:checked + .radio_btn{
-	background-color: #6c757d;
-	color:#fff;
+	border:3px solid #674187;
+	background-color: #e5dfeb;
 }
 
 .radio_btn{	
-	width: 180px;
-	height: 120px;
-	border-radius: 15px;
+	width: 10rem;
+	height: 9rem;
+	border-radius: 5px;
+	border:2px solid #e5dfeb;
 	position: relative;
 	text-align:center;
 	cursor: pointer;
-	background-color: #dde4ea;
+	background-color: #fff;
 	float: left;
-	margin-top: 10px;	
+	margin-top: 10px;
 }
 
 .radio_btn > img{
-	width:120px;
-	height:90px;
+	width: 6rem;
+	height: 6rem;
 }
 
 
@@ -154,29 +162,111 @@ body {
 .testsize{
 	position:absolute;
     margin: 0 auto;
-	width: 180px;
-	height:180px;
-	top:140px;
-	left:350px;
+	width: 100px;
+	height:100px;
+	top:6rem;
+	left:22rem;
 }
 
 .addtest{
 	position:absolute;
     margin: 0 auto;
-	width: 180px;
-	height:180px;
-	top:140px;
-	left:350px;
+	width: 100px;
+	height:100px;
+	top:6rem;
+	left:22rem;
+	color:#000;
+}
+
+
+/* 퍼센트, 선글라스, 안경 버튼 */
+
+.btn0 {
+	font-size: 1.5rem;
+	width:10rem;
+	height:3rem;
+	padding: 5px 15px 15px 15px;
+	background-color: white;
+	border:3px solid #674187;
+	border-radius:5px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	transition:all 0.4s;
+	margin-top:20px;
+}
+.btn0:hover {
+	background-color:#674187;
+	color: white;
+}
+#menu0:checked ~ .btn0 {
+	background-color:#674187;
+	color: white;
+	border:3px solid #512c70;
+}
+
+.btn1 {
+	font-size: 1.5rem;
+	width:10rem;
+	height:3rem;
+	padding: 5px 15px 15px 15px;
+	background-color: white;
+	border:3px solid #674187;
+	border-radius:5px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	transition:all 0.4s;
+	margin-top:20px;
+}
+.btn1:hover {
+	background-color:#674187;
+	color: white;
+}
+
+#menu:checked ~ .btn1 {
+	background-color:#674187;
+	color: white;
+	border:3px solid #512c70;
+}
+.btn2 {
+	font-size: 1.5rem;
+	width:10rem;
+	height:3rem;
+	padding: 5px 15px 15px 15px;
+	background-color: white;
+	border:3px solid #674187;
+	border-radius:5px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	transition:all 0.4s;
+	margin-top:20px;
+}
+.btn2:hover {
+	background-color:#674187;
+	color: white;
+}
+#menu2:checked ~ .btn2 {
+	background-color:#674187;
+	color: white;
+	border:3px solid #512c70;
+}
+
+/* 퍼센트 버튼 */
+input#menu0{
+	display:none;
+}
+
+nav#main_nav0{
+	display:none;
+}
+input#menu0:checked + nav#main_nav0{
+	display: block;
 }
 
 /* 선글라스 버튼 */
-label.menu{
-	margin: 20px;
-	padding: 4px;
-}
 input#menu{
 	display:none;
 }
+
 nav#main_nav{
 	display:none;
 }
@@ -184,40 +274,12 @@ input#menu:checked + nav#main_nav{
 	display: block;
 }
 
-.w-btn-outline {
-    position: relative;
-    padding: 15px 30px;
-    border-radius: 15px;
-    font-family: "paybooc-Light", sans-serif;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.25s;
-}
-
-.w-btn-green {
-    background-color: #77af9c;
-    color: #d7fff1;
-}
-
-.w-btn-green-outline {
-    border: 3px solid #77af9c;
-    color: #000;
-}
-
-.w-btn-green-outline:hover {
-    background-color: #77af9c;
-    color: #d7fff1;
-}
 
 /* 안경 버튼 */
-label.menu2{
-	margin: 20px;
-	padding: 4px;
-}
 input#menu2{
 	display:none;
 }
+
 nav#main_nav2{
 	display:none;
 }
@@ -226,8 +288,8 @@ input#menu2:checked + nav#main_nav2{
 }
 
 .addimg{
-	width:90px;
-	height:90px;
+	width:110px;
+	height:80px;
 }
 
 /* 이미지 추가 */
@@ -243,7 +305,7 @@ input#menu2:checked + nav#main_nav2{
 }
 
 
-/* 마우스 */
+/* 이동 마우스 */
 .Move{
   cursor: cell;
   position: absolute;
@@ -252,6 +314,103 @@ input#menu2:checked + nav#main_nav2{
   border: 1px solid #d3d3d3;
   text-align: center;	
 }
+
+/* 슬라이드 박스 */
+.sliderbox{
+	width: 31.5rem;
+	height: 3rem;
+	padding: 20px 20px 20px 30px;
+	border-radius: 5px;
+	border:2px solid #e5dfeb;
+	background: #fff;
+	align-items: center;	
+	display: flex;
+	margin: auto;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;  
+  background: #e5dfeb;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 30%; 
+  background: #c5afd7;
+  border:4px solid #230040;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 30%;
+  background: #c5afd7;
+  border:4px solid #230040;
+  cursor: pointer;
+}
+
+.value {
+	font-size: 1.5rem;
+	font-weight:600;
+	color: #230040;
+	width: 40px;
+	font-family: 'Gamja Flower', cursive;
+	text-align: center;
+}
+
+.valueq{
+	font-size: 1.2rem;
+	font-weight:600;
+	color: #230040;
+	font-family: 'Gamja Flower', cursive;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.blank{
+	width: 40px;
+}
+
+/* 각도 버튼 */
+.udbtn{
+	font-size: 2rem;
+	font-weight:1000;
+	color: #000;
+	width: 40px;
+	font-family: 'Gamja Flower', cursive;
+	text-align: center;
+}
+
+.rotate{
+	font-size: 1.5rem;
+	font-weight:600;
+	color: #230040;
+	width: 40px;
+	font-family: 'Gamja Flower', cursive;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.do{
+	font-size: 1.2rem;
+	font-weight:600;
+	color: #230040;
+	text-align: center;
+   font-family: 'Nanum Pen Script', cursive;
+	margin-bottom: 0.5rem;
+}
+
 
 /* 얼굴형 테스트 ~ */
 .section {
@@ -305,6 +464,11 @@ input#menu2:checked + nav#main_nav2{
     color: #000000;
     margin: 0 auto;
 }
+.text-center{
+	font-size: 2rem;
+	font-weight:600;
+	font-family: 'Gamja Flower', cursive;
+}
 
 /* 맨아래 CIE졸업작품 */
 .footer {
@@ -326,7 +490,7 @@ input#menu2:checked + nav#main_nav2{
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(27, 175, 234, 0.2);
+  background-color: rgba(226, 178, 112, 0.2);
 }
 .egg-bar {
   position: absolute;
@@ -334,7 +498,7 @@ input#menu2:checked + nav#main_nav2{
   left: 0;
   height: 2rem;
   border-radius: 10px;
-  background-color: rgba(27, 175, 234, 1);
+  background-color: rgba(226, 178, 112, 1);
 }
 .round-box {
   position: absolute;
@@ -343,7 +507,7 @@ input#menu2:checked + nav#main_nav2{
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(195, 140, 102, 0.2);
+  background-color: rgba(93, 147, 201, 0.2);
 }
 .round-bar {
   position: absolute;
@@ -351,7 +515,7 @@ input#menu2:checked + nav#main_nav2{
   left: 0;
   height: 2rem;
   border-radius: 10px;
-  background-color: rgba(195, 140, 102, 1);
+  background-color: rgba(93, 147, 201, 1);
 }
 .long-box {
   position: absolute;
@@ -360,7 +524,7 @@ input#menu2:checked + nav#main_nav2{
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(117, 204, 84, 0.2);
+  background-color: rgba(141, 165, 85, 0.2);
 }
 .long-bar {
   position: absolute;
@@ -368,7 +532,7 @@ input#menu2:checked + nav#main_nav2{
   left: 0;
   height: 2rem;
   border-radius: 10px;
-  background-color: rgba(117, 204, 84, 1);
+  background-color: rgba(141, 165, 85, 1);
 }
 .angled-box {
   position: absolute;
@@ -377,7 +541,7 @@ input#menu2:checked + nav#main_nav2{
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(49, 132, 155, 0.2);
+  background-color: rgba(239, 136, 87, 0.2);
 }
 .angled-bar {
   position: absolute;
@@ -385,7 +549,7 @@ input#menu2:checked + nav#main_nav2{
   left: 0;
   height: 2rem;
   border-radius: 10px;
-  background-color: rgba(49, 132, 155, 1);
+  background-color: rgba(239, 136, 87, 1);
 }
 .heart-box {
   position: absolute;
@@ -394,7 +558,7 @@ input#menu2:checked + nav#main_nav2{
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(251, 176, 59, 0.2);
+  background-color: rgba(241, 138, 155, 0.2);
 }
 .heart-bar {
   position: absolute;
@@ -402,7 +566,7 @@ input#menu2:checked + nav#main_nav2{
   left: 0;
   height: 2rem;
   border-radius: 10px;
-  background-color: rgba(251, 176, 59, 1);
+  background-color: rgba(241, 138, 155, 1);
 }
 
 .percent-text {
@@ -420,43 +584,47 @@ input#menu2:checked + nav#main_nav2{
     margin: 0 auto;
 }
 .face-explain {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+
+}
+.face-explain-item{
+	font-size: 1.8rem;
+}
+
+.tag{
+	font-size: 2rem;
+	font-family: 'Nanum Pen Script', cursive;
 }
 
 .egg-face-title {
-    color: #3ba363;
+    color: #e2b270;
 }
-.egg-face-celeb {
-    color: #3ba363;
-    font-size: 1.2rem;
+.egg-face-tag {
+    color: #e2b270;
 }
 .round-face-title {
-    color: #3ba363;
+    color: #5d93c9;
 }
-.round-face-celeb {
-    color: #3ba363;
-    font-size: 1.2rem;
+.round-face-tag {
+    color: #5d93c9;
 }
 .long-face-title {
-    color: #ff6c0a;
+    color: #8da555;
 }
-.long-face-celeb {
-    color: #ff6c0a;
-    font-size: 1.2rem;
+.long-face-tag {
+    color: #8da555;
 }
 .angled-face-title {
-    color: #548dd4;
+    color: #ef8857;
 }
-.angled-face-celeb {
-    color: #548dd4;
-    font-size: 1.2rem;
+.angled-face-tag {
+    color: #ef8857;
 }
 .heart-face-title {
-    color: #e56995;
+    color: #f18a9b;
 }
-.heart-face-celeb {
-    color: #e56995;
-    font-size: 1.2rem;
+.heart-face-tag {
+    color: #f18a9b;
 }
 
 
@@ -497,7 +665,7 @@ label.genderyn {
   left: 0;
   height: 41px;
   border-radius: 50%;
-  box-shadow: 0 0 0 8px #efe476 inset;
+  box-shadow: 0 0 0 8px #d7ca46 inset;
   background-color:  #fff6cd;
   transition: 0.3s;
 }
@@ -512,7 +680,7 @@ label.genderyn {
 }
 
 input:checked + label > .knob {
-  box-shadow: 0 0 0 8px #5db76c inset;
+  box-shadow: 0 0 0 8px #50a572 inset;
   background-color: #e3ffeb;
   transform: translateX(49px) rotate(-140deg);
 }
