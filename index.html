@@ -15,7 +15,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Nanum+Pen+Script&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Nanum+Gothic&family=Jua&family=Nanum+Pen+Script&family=Poor+Story&display=swap"
             rel="stylesheet"
         />
 
@@ -32,7 +32,7 @@
 
         <section class="section">
             <h1 class="title">얼굴형 테스트</h1>
-            <h2 class="subtitle">사진으로 얼굴형 찾고 액세서리 추천받기</h2>
+            <h2 class="subtitle">사진으로 얼굴형 찾고 선글라스/안경 추천받기</h2>
         </section>
 
         <!-- 성별 -->
@@ -68,41 +68,52 @@
                     </h3>
                 </div>
             </div>
+			
 
 			
 			<!-- 마우스 클릭 -->
                 <div class="Move">
-                    <div id="sun1" class="hide"><img src="imgS/roundS.png" class="testsize" /></div>
-                    <div id="sun2" class="hide"><img src="imgS/catS.png" class="testsize" /></div>
-                    <div id="sun3" class="hide"><img src="imgS/squareS.png" class="testsize" /></div>
-                    <div id="sun4" class="hide"><img class="addtest" id="face-images" src="#" /></div>
+                    <div id="sun1" class="hide"><img id = "imgs1" src="imgS/roundS.png" class="testsize" /></div>
+                    <div id="sun2" class="hide"><img id = "imgs2" src="imgS/boeingS.png" class="testsize" /></div>
+                    <div id="sun3" class="hide"><img id = "imgs3" src="imgS/squareS.png" class="testsize" /></div>
+                    <div id="sun4" class="hide"><img id = "imgs4" class="addtest" src="#" alt=" 이미지를 추가하세요."/></div>
 
-                    <div id="gls1" class="hide"><img src="imgG/roundG.png" class="testsize" /></div>
-                    <div id="gls2" class="hide"><img src="imgG/catG.png" class="testsize" /></div>
-                    <div id="gls3" class="hide"><img src="imgG/squareG.png" class="testsize" /></div>
-                    <div id="gls4" class="hide"><img class="addtest" id="face-images" src="#" /></div>
+                    <div id="gls1" class="hide"><img id = "imgg1" src="imgG/roundG.png" class="testsize" /></div>
+                    <div id="gls2" class="hide"><img id = "imgg2" src="imgG/boeingG.png" class="testsize" /></div>
+                    <div id="gls3" class="hide"><img id = "imgg3" src="imgG/squareG.png" class="testsize" /></div>
+                    <div id="gls4" class="hide"><img id = "imgg4" class="addtest" src="#" alt=" 이미지를 추가하세요."/></div>
                 </div>
 			
 			
 			
             <div class="file-upload-content">
                 <img class="file-upload-image" id="face-image" src="#" alt="your image" />
-                <div id="loading" class="animated bounce">
+                <div id="loading" class="faced bounce">
                     <div class="spinner-border" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
+						<span class="sr-only">Loading...</span>
+					</div>
                     <p class="text-center">얼굴형 분석중...</p>
                 </div>
-                <p class="result-message"></p>
-                <div id="label-container" class="d-flex flex-column justify-content-around"></div>
-
+				
+				<!-- 얼굴형 / 설명 -->
+                <p class="result-message"></p>		
+				
+				<!-- 퍼센트 이미지-->
+				<input id="menu0" type="checkbox" name="menu12" onclick="checkonly(this); clears(); clearg();" checked/>
+				<nav id="main_nav0" class="pt-3 imgp">	
+					<p class="result-message-explain"></p>
+	
+                	<div id="label-container" class="d-flex flex-column justify-content-around"></div> <!-- 퍼센트 -->
+				</nav>
 				
 				<!-- 선글라스 이미지 버튼들 -->
-                <label class="menu w-btn-outline w-btn-green-outline" for="menu">선글라스</label>				
-				<label class="menu2  w-btn-outline w-btn-green-outline" for="menu2">안경</label>
-				
-                <input id="menu" type="checkbox" name="menu12" onclick="checkonly(this)"/>
-                <nav id="main_nav" class="pt-3 imgtest">
+                <input id="menu" type="checkbox" name="menu12" onclick="checkonly(this); clearg();"/>
+                <nav id="main_nav" class="imgtest">
+					
+					<div class="labels-m">
+					<p class="result-message-sunglass"></p>
+					</div>
+					
                     <div class="pt-3 labels">
                         <label class="labelradio">
                             <input
@@ -124,8 +135,8 @@
                                 onclick="shows2();"
                             />
                             <div class="radio_btn">
-                                <img src="imgS/catS.png" />
-                                <p>캣아이</p>
+                                <img src="imgS/boeingS.png" />
+                                <p>보잉</p>
                             </div></label
                         >
                         <label class="labelradio">
@@ -137,7 +148,7 @@
                             />
                             <div class="radio_btn">
                                 <img src="imgS/squareS.png" />
-                                <p>사각프레임</p>
+                                <p>스퀘어</p>
                             </div></label
                         >
                     </div>
@@ -178,13 +189,27 @@
                                 <p>삭제</p>
                             </div></label
                         >
-                    </div>
+                    </div>	
+					
+						<!-- 슬라이더 바 -->
+					<div class ="sliderbox">			
+							<input type="range" min="1" max="100" value="50" class="slider" id="sRange">				
+						<div id="values" class="value">50</div> <p class="valueq">%</p>
+						<div class="blank"></div>
+							<div id= "downs" class="udbtn" type="button"> - </div> 
+						<div id="rotates" class="rotate"> 0 </div> <p class="do"> º </p> 
+						<div id ="ups" class="udbtn" type="button"> + </div>
+				    </div>
+
                 </nav>
 				
-				<!-- 안경 이미지 버튼들 -->
-                
-                <input id="menu2" type="checkbox" name="menu12" onclick="checkonly(this)" />
-                <nav id="main_nav2" class="pt-3 imgtest">
+				<!-- 안경 이미지 버튼들 -->          
+                <input id="menu2" type="checkbox" name="menu12" onclick="checkonly(this); clears();" />
+                <nav id="main_nav2" class="imgtest">
+					<div class="labels-m">
+					<p class="result-message-glass"></p>
+					</div>
+					
                     <div class="pt-3 labels">
                         <label class="labelradio">
                             <input
@@ -195,7 +220,7 @@
                             />
                             <div class="radio_btn">
                                 <img src="imgG/roundG.png" />
-                                <p>동그란</p>
+                                <p>라운드</p>
                             </div></label
                         >
                         <label class="labelradio">
@@ -206,8 +231,8 @@
                                 onclick="showg2();"
                             />
                             <div class="radio_btn">
-                                <img src="imgG/catG.png" />
-                                <p>캣아이</p>
+                                <img src="imgG/boeingG.png" />
+                                <p>보잉</p>
                             </div></label
                         >
                         <label class="labelradio">
@@ -219,7 +244,7 @@
                             />
                             <div class="radio_btn">
                                 <img src="imgG/squareG.png" />
-                                <p>네모난</p>
+                                <p>사각 스퀘어</p>
                             </div></label
                         >
                     </div>
@@ -261,14 +286,34 @@
                             </div></label
                         >
                     </div>
+					
+						<!-- 슬라이더 바 -->		
+
+						<div class ="sliderbox">			
+							<input type="range" min="1" max="100" value="50" class="slider" id="gRange">				
+						<div id="valueg" class="value">50</div> <p class="valueq">%</p>
+						  <div class="blank"></div>
+							<div id= "downg" class="udbtn" type="button"> - </div> <div id="rotateg" class="rotate"> 0 </div> <p class="do"> º </p> <div id ="upg" class="udbtn" type="button"> + </div>
+				    </div>
+
+	
                 </nav>
+				
+			
+			
+				
+						
+				<!-- 퍼센트/선글라스/안경 버튼 -->
+				<label class="btn0"for="menu0">얼굴형%</label>		
+                <label class="btn1" for="menu">선글라스</label>				
+				<label class="btn2" for="menu2">안경</label>
 
                 <!-- 다른사진 재시도 -->
-                <div class="pt-3 image-title-wrap">
+                <div class="image-title-wrap">
                     <button
                         type="button p-2"
                         class="try-again-btn"
-                        onclick="window.location.reload();"
+                        onclick="window.location.reload(); clears(); clearg();"
                     >
                         <span class="try-again-text">다른 사진으로 재시도</span>
                     </button>
@@ -427,7 +472,7 @@
 			}
 
 			
-		
+	<!-- 버튼 단일 선택 -->	
     function checkonly(element) {
       const checkboxes 
           = document.getElementsByName("menu12");
@@ -436,8 +481,121 @@
       })
       element.checked = true;
     }
+		
+			
+	<!-- 선글라스 슬라이더 -->			
+	var slider = document.getElementById("sRange");
+			var output = document.getElementById("values");
+			output.innerHTML = slider.value;
 
+			slider.oninput = function() {
+				output.innerHTML = this.value;			
+			}
+			
+			
+						
+	<!-- 선글라스 슬라이더 값 이미지 크기 변경 -->	
+$(function(){
+	$(document).on('click','#sRange',function(event){
+				
+		$("#imgs1").width(100*(slider.value/50));
+		$("#imgs1").height(100*(slider.value/50));		
+		$("#imgs2").width(100*(slider.value/50));
+		$("#imgs2").height(100*(slider.value/50));
+		$("#imgs3").width(100*(slider.value/50));
+		$("#imgs3").height(100*(slider.value/50));
+		$("#imgs4").width(100*(slider.value/50));
+		$("#imgs4").height(100*(slider.value/50));
+	});
+});
+		
+		<!-- 선글라스 회전 오른쪽 + -->	
+	var degrees=0;	
+	var rotates = document.getElementById("rotates");
+			
+	$(function(){
+	$(document).on('click','#ups',function(event){
+		degrees=degrees+1;
+		
+		rotates.innerHTML = degrees;
+		document.getElementById('imgs1').style.transform='rotate('+degrees+'deg)';
+		document.getElementById('imgs2').style.transform='rotate('+degrees+'deg)';
+		document.getElementById('imgs3').style.transform='rotate('+degrees+'deg)';
+		document.getElementById('imgs4').style.transform='rotate('+degrees+'deg)';				
+		});	
+	});		
 
+	<!-- 선글라스 회전 왼쪽 - -->				
+	$(function(){
+	$(document).on('click','#downs',function(event){
+		degrees=degrees-1;
+		
+		rotates.innerHTML = degrees;
+		document.getElementById('imgs1').style.transform='rotate('+degrees+'deg)';
+		document.getElementById('imgs2').style.transform='rotate('+degrees+'deg)';
+		document.getElementById('imgs3').style.transform='rotate('+degrees+'deg)';
+		document.getElementById('imgs4').style.transform='rotate('+degrees+'deg)';				
+		});	
+	});		
+
+			
+				
+				
+	<!-- 안경 슬라이더 -->			
+	var sliderg = document.getElementById("gRange");
+			var outputg = document.getElementById("valueg");
+			outputg.innerHTML = sliderg.value;
+
+			sliderg.oninput = function() {
+				outputg.innerHTML = this.value;			
+			}			
+				
+			
+	<!-- 안경 슬라이더 값 이미지 크기 변경 -->	
+$(function(){
+	$(document).on('click','#gRange',function(event){
+
+		$("#imgg1").width(100*(sliderg.value/50));
+		$("#imgg1").height(100*(sliderg.value/50));
+		$("#imgg2").width(100*(sliderg.value/50));
+		$("#imgg2").height(100*(sliderg.value/50));
+		$("#imgg3").width(100*(sliderg.value/50));
+		$("#imgg3").height(100*(sliderg.value/50));
+		$("#imgg4").width(100*(sliderg.value/50));
+		$("#imgg4").height(100*(sliderg.value/50));
+		
+	});	
+});
+				
+			
+	<!-- 안경 회전 오른쪽 + -->	
+	var degreeg=0;	
+	var rotateg = document.getElementById("rotateg");
+			
+	$(function(){
+	$(document).on('click','#upg',function(event){
+		degreeg=degreeg+1;
+		
+		rotateg.innerHTML = degreeg;
+		document.getElementById('imgg1').style.transform='rotate('+degreeg+'deg)';
+		document.getElementById('imgg2').style.transform='rotate('+degreeg+'deg)';
+		document.getElementById('imgg3').style.transform='rotate('+degreeg+'deg)';
+		document.getElementById('imgg4').style.transform='rotate('+degreeg+'deg)';				
+		});	
+	});		
+
+	<!-- 안경 회전 왼쪽 - -->				
+	$(function(){
+	$(document).on('click','#downg',function(event){
+		degreeg=degreeg-1;
+		
+		rotateg.innerHTML = degreeg;
+		document.getElementById('imgg1').style.transform='rotate('+degreeg+'deg)';
+		document.getElementById('imgg2').style.transform='rotate('+degreeg+'deg)';
+		document.getElementById('imgg3').style.transform='rotate('+degreeg+'deg)';
+		document.getElementById('imgg4').style.transform='rotate('+degreeg+'deg)';				
+		});	
+	});	
 			
 			
 			
@@ -448,8 +606,8 @@
         <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
         <script type="text/javascript">
                                 let URL;
-                                const urlMale = 'https://teachablemachine.withgoogle.com/models/nRYwMex6R/'; //남성
-                                const urlFemale = 'https://teachablemachine.withgoogle.com/models/nRYwMex6R/'; //여성
+                                const urlMale = 'https://teachablemachine.withgoogle.com/models/GOTs3qfac/'; //남성
+                                const urlFemale = 'https://teachablemachine.withgoogle.com/models/sA91mArBu'; //여성
                                 let model, labelContainer, maxPredictions;
                                 async function init() {
                                     if (document.getElementById('gender').checked) {
@@ -470,134 +628,259 @@
                                 }
 
 								
-			
-			
+								var title, explain,tags,tagg,sun,gls;
+								
                                 async function predict() {
                                     var image = document.getElementById('face-image');
                                     const prediction = await model.predict(image, false);
                         			//높은 순서대로 결과값 출력
                                     prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
                                     console.log(prediction[0].className);
-                                    var resultTitle, resultExplain, resultCeleb, resultSun;
+                                    var resultTitle, resultExplain, resultSun, resultGls,resultTags1, resultTags2,resultTags3, resultTagg1, resultTagg2, resultTagg3;
                                     if (document.getElementById('gender').checked) {
                                         switch (prediction[0].className) {
                                            case 'egg':
                                              resultTitle = '달걀형';
                                                 resultExplain =
-                                                    '전체적인 모양이 계란 모양에 가깝습니다. 순수하고 인형같은 느낌을 주며 전형적인 미인상의 얼굴형입니다.';
-                                                resultCeleb =
-                                                    '#달걀형';
+                                                    '전체적인 모양이 달걀 모양에 가까운 축복받은 얼굴형입니다. 얼굴 너비보다 높이가 크고 이마와 턱선이 자연스럽고 둥글어 부드럽게 흐르는 얼굴 라인이 특징으로 다양한 스타일 변화가 가능합니다.';                                              
 												resultSun =
-													'테스트 중입니다.';
+													'대체적으로 모든 모양의 선글라스가 어울립니다. 포인트를 줄 수 있는 틴트 선글라스나 유니크한 프레임의 선글라스를 추천합니다.';
+												resultTags1 =
+                                                    "<a href='https://search.shopping.naver.com/search/all?query=유행선글라스' target='_blank' style='color:#e2b270'>#유행 선글라스 </a>";
+												resultTags2 =
+													 "<a href='https://search.shopping.naver.com/search/all?query=틴트선글라스' target='_blank'style='color:#e2b270'>#틴트 선글라스 </a>";
+												resultTags3 = '';
+												resultGls =
+													'다양한 스타일이 잘 어울립니다. 라운드형 안경은 귀여운 이미지를 주고 각진형은 강한느낌과 시크한 느낌을 줍니다.';
+												resultTagg1 =
+                                                    "<a href='https://search.shopping.naver.com/search/all?query=라운드프레임안경' target='_blank'style='color:#e2b270'>#라운드프레임 </a>";
+												resultTagg2 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=라운드프레임안경' target='_blank'style='color:#e2b270'>#각진프레임 </a>";
+												resultTagg3 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=라운드프레임안경' target='_blank'style='color:#e2b270'>#보잉프레임 </a>";
                                                 break;
                                             case 'round':
                                                 resultTitle = '동그란형';
                                                 resultExplain =
-                                                    '가로 너비가 넓은 것이 특징입니다. 광대와 턱이 발달되지 않아 어린느낌을 주어 귀엽고 어려보이는 이미지 입니다.';
-                        						resultCeleb =
-                                                    '#동그란형';
+                                                    '동글동글한 이미지로 귀여움과 동안의 인상으로 유한 느낌을 줍니다. 얼굴 너비와 길이가 비슷하고 주로 볼이 통통하여 이마자체의 넓이가 좁고 턱선이 둥근 얼굴 라인이 특징입니다.';
 												resultSun =
-													'테스트 중입니다.';
+													'캣츠아이와 스퀘어 모양의 각이 진 형태의 선글라스가 얼굴형과 대비되어 얼굴을 더욱 갸름해 보이는 효과를 줄 수 있습니다.';
+												resultTags1 =
+                                                    "<a href='https://search.shopping.naver.com/search/all?query=캣츠아이선글라스' target='_blank' style='color:#5d93c9'>#캣츠아이 선글라스 </a>";
+												resultTags2 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=스퀘어선글라스' target='_blank'style='color:#5d93c9'>#스퀘어 선글라스 </a>";
+												resultTags3 = '';
+												resultGls =
+													'둥근 이미지를 좀 더 각지게 만들어 보이는 각진형은 안경이 강조되어 인상이 세련되어 보일 수 있으며 보잉형은 턱선이 갸름해 보이게 해 줄 수 있다.';
+												resultTagg1 =
+                                                     "<a href='https://search.shopping.naver.com/search/all?query=각진라운드프레임안경' target='_blank'style='color:#5d93c9'>#각진프레임 </a>";
+												resultTagg2 =
+												     "<a href='https://search.shopping.naver.com/search/all?query=보잉라운드프레임안경' target='_blank'style='color:#5d93c9'>#보잉프레임 </a>";
+												resultTagg3 = '';
                                                 break;
                                             case 'long':
                                                 resultTitle = '긴얼굴형';
                                                 resultExplain =
-                                                    '광대와 턱 골격이 모두 없고 세로로 긴 얼굴형입니다. 긴 얼굴형은 성숙해 보이는 느낌을 줍니다.';
-                        						resultCeleb =
-                                                    '#긴얼굴형';
+                                                    '성숙해 보이고 지적이며 세련된 느낌을 동시에 줍니다. 얼굴의 너비보다 길이가 전체적으로 긴 편으로 이마와 턱의 너비가 같고 턱선이 크게 모나지 않은 얼굴 라인이 특징입니다.';
 												resultSun =
-													'테스트 중입니다.';
+													'가로가 긴 형태의 라운드나 보잉 모양의 오버사이즈 선글라스가 얼굴에 시선이 가로 방향으로 분산되어 긴 얼굴라인을 덜 길어보이게 해 줄 수 있다.';
+												resultTags1 =
+                                                    "<a href='https://search.shopping.naver.com/search/all?query=라운드선글라스' target='_blank'style='color:#8da555'>#라운드 선글라스 </a>";
+												resultTags2 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=보잉선글라스' target='_blank'style='color:#8da555'>#보잉 선글라스 </a>";
+												resultTags3 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=오버사이즈선글라스' target='_blank'style='color:#8da555'>#오버사이즈 선글라스 </a>";
+												resultGls =
+													'시선이 위아래가 아닌 옆으로 퍼질 수 있도록 귀쪽으로 시선을 줄 수 있는 스퀘어형과 이미지를 부드럽게 해주는 라운드형과 잘 어울립니다.';
+												resultTagg1 =
+                                                     "<a href='https://search.shopping.naver.com/search/all?query=스퀘어프레임안경' target='_blank'style='color:#8da555'>#스퀘어프레임 </a>";
+												resultTagg2 =
+												     "<a href='https://search.shopping.naver.com/search/all?query=라운드프레임안경' target='_blank'style='color:#8da555'>#라운드프레임 </a>";
+												resultTagg3 = '';
                                                 break;
                                             case 'angled':
                                                resultTitle = '각진형';
                                                 resultExplain =
-                                                   '광대가 거의 부각되지 않으며 턱이 발달된 유형으로 고급스러운 진중한 느낌을 주는 얼굴형입니다.';
-                        						resultCeleb =
-                                                    '#각진형';
+                                                    '고급스럽고 진중한 느낌을 줍니다. 얼굴의 너비와 길이가 비슷하며 선 자체가 일직선으로 떨어져 보이며 넓은 이마와 턱선이 강한 얼굴 라인이 특징입니다.';
 												resultSun =
-													'테스트 중입니다.';
+													'라운드와 둥근프레임 선글라스는 선이 강한 얼굴이미지를 부드럽고 유연하게 만들어 주며 오버사이즈 선글라스로 시선을 선글라스로 집중시켜 시선을 분산시키는 효과가 있다.';
+												resultTags1 =
+                                                    "<a href='https://search.shopping.naver.com/search/all?query=라운드선글라스' target='_blank'style='color:#ef8857'>#라운드 선글라스 </a>";
+												resultTags2 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=둥근프레임선글라스' target='_blank'style='color:#ef8857'>#둥근프레임 선글라스 </a>";
+												resultTags3 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=오버사이즈선글라스' target='_blank'style='color:#ef8857'>#오버사이즈 선글라스 </a>";
+												resultGls =
+													"부드러운 이미지를 풀어주어 시선이 안경으로 가게 하는 라운드형과 각진 턱을 부드럽게 만들어 주는 오버사이즈형이 잘 어울립니다.";
+												resultTagg1 =
+                                                    "<a href='https://search.shopping.naver.com/search/all?query=라운드프레임안경' target='_blank'style='color:#ef8857'>#라운드프레임 </a>";
+												resultTagg2 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=오버사이즈프레임안경' target='_blank'style='color:#ef8857'>#오버사이즈프레임 </a>";
+												resultTagg3 = '';
                                                 break;
                                             case 'heart':
                                                 resultTitle = '하트형';
                                                 resultExplain =
-                                                    '광대가 발달되어 있으며 얼굴길이가 짧습니다. 사랑스럽고 생기가 넘치는 느낌을 줍니다.'
-                        						resultCeleb =
-                                                    '#하트형';
+                                                    '사랑스럽고 생기가 넘치는 느낌을 줍니다. 얼굴의 너비와 길이가 비슷하며 이마가 눈에 띄는 편으로 광대가 높고 턱이 좁은 얼굴라인이 특징입니다.';
 												resultSun =
-													'테스트 중입니다.';
+													'둥근 하프 프레임 선글라스 이마를 커버하면서 한층 부드럽고 매끄러운 얼굴형으로 연출해 준다.';
+												resultTags1 =
+                                                    "<a href='https://search.shopping.naver.com/search/all?query=라운드선글라스' target='_blank'style='color:#f18a9b'>#라운드 선글라스 </a>";
+												resultTags2 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=타원형선글라스' target='_blank'style='color:#f18a9b'>#타원형 선글라스 </a>";
+												resultTags3 = '';
+												resultGls =
+													'전체적인 프레임에 가려져서 광대뼈가 덜 부각되어 보이는 정사각형프레임과 뾰족한 느낌을 줄 수 있는 스퀘어 타입과 잘 어울립니다.';
+												resultTagg1 =
+                                                     "<a href='https://search.shopping.naver.com/search/all?query=정사각형프레임안경' target='_blank'style='color:#f18a9b'>#정사각형프레임 </a>";
+												resultTagg2 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=스퀘어프레임안경' target='_blank'style='color:#f18a9b'>#각진프레임 </a>";
+												resultTagg3 = '';
                                                 break;
                                             default:
                                                 resultTitle = '알수없음';
                                                 resultExplain = '';
-                                                resultCeleb = '';
+                                                resultSun = '';
+												resultTags1 = '';
+												resultTags2 = '';
+												resultTags3 = '';
+												resultGls = '';
+												resultTagg1 = '';
+												resultTagg2 = '';
+												resultTagg3 = '';
                                         }
                                     } else {
                                         switch (prediction[0].className) {
                                             case 'egg':
-                                             resultTitle = '달걀형';
+                                              resultTitle = '달걀형';
                                                 resultExplain =
-                                                    '전체적인 모양이 계란 모양에 가깝습니다. 순수하고 인형같은 느낌을 주며 전형적인 미인상의 얼굴형입니다.';
-                                                resultCeleb =
-                                                    '#달걀형';
+                                                    '전체적인 모양이 달걀 모양에 가까운 축복받은 얼굴형입니다. 얼굴 너비보다 높이가 크고 이마와 턱선이 자연스럽고 둥글어 부드럽게 흐르는 얼굴 라인이 특징으로 다양한 스타일 변화가 가능합니다.';                                              
 												resultSun =
-													'테스트 중입니다.';
+													'대체적으로 모든 모양의 선글라스가 어울립니다. 포인트를 줄 수 있는 틴트 선글라스나 유니크한 프레임의 선글라스를 추천합니다.';
+												resultTags1 =
+                                                    "<a href='https://search.shopping.naver.com/search/all?query=유행선글라스' target='_blank' style='color:#e2b270'>#유행 선글라스 </a>";
+												resultTags2 =
+													 "<a href='https://search.shopping.naver.com/search/all?query=틴트선글라스' target='_blank'style='color:#e2b270'>#틴트 선글라스 </a>";
+												resultTags3 = '';
+												resultGls =
+													'다양한 스타일이 잘 어울립니다. 라운드형 안경은 귀여운 이미지를 주고 각진형은 강한느낌과 시크한 느낌을 줍니다.';
+												resultTagg1 =
+                                                    "<a href='https://search.shopping.naver.com/search/all?query=라운드프레임안경' target='_blank'style='color:#e2b270'>#라운드프레임 </a>";
+												resultTagg2 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=라운드프레임안경' target='_blank'style='color:#e2b270'>#각진프레임 </a>";
+												resultTagg3 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=라운드프레임안경' target='_blank'style='color:#e2b270'>#보잉프레임 </a>";
                                                 break;
                                             case 'round':
                                                 resultTitle = '동그란형';
                                                 resultExplain =
-                                                    '가로 너비가 넓은 것이 특징입니다. 광대와 턱이 발달되지 않아 어린느낌을 주어 귀엽고 어려보이는 이미지 입니다.';
-                        						resultCeleb =
-                                                    '#동그란형';
+                                                    '동글동글한 이미지로 귀여움과 동안의 인상으로 유한 느낌을 줍니다. 얼굴 너비와 길이가 비슷하고 주로 볼이 통통하여 이마자체의 넓이가 좁고 턱선이 둥근 얼굴 라인이 특징입니다.';
 												resultSun =
-													'테스트 중입니다.';
+													'캣츠아이와 스퀘어 모양의 각이 진 형태의 선글라스가 얼굴형과 대비되어 얼굴을 더욱 갸름해 보이는 효과를 줄 수 있습니다.';
+												resultTags1 =
+                                                    "<a href='https://search.shopping.naver.com/search/all?query=캣츠아이선글라스' target='_blank' style='color:#5d93c9'>#캣츠아이 선글라스 </a>";
+												resultTags2 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=스퀘어선글라스' target='_blank'style='color:#5d93c9'>#스퀘어 선글라스 </a>";
+												resultTags3 = '';
+												resultGls =
+													'둥근 이미지를 좀 더 각지게 만들어 보이는 각진형은 안경이 강조되어 인상이 세련되어 보일 수 있으며 보잉형은 턱선이 갸름해 보이게 해 줄 수 있다.';
+												resultTagg1 =
+                                                     "<a href='https://search.shopping.naver.com/search/all?query=각진라운드프레임안경' target='_blank'style='color:#5d93c9'>#각진프레임 </a>";
+												resultTagg2 =
+												     "<a href='https://search.shopping.naver.com/search/all?query=보잉라운드프레임안경' target='_blank'style='color:#5d93c9'>#보잉프레임 </a>";
+												resultTagg3 = '';
                                                 break;
                                             case 'long':
                                                 resultTitle = '긴얼굴형';
                                                 resultExplain =
-                                                    '광대와 턱 골격이 모두 없고 세로로 긴 얼굴형입니다. 긴 얼굴형은 성숙해 보이는 느낌을 줍니다.';
-                        						resultCeleb =
-                                                    "<a href='https://search.shopping.naver.com/search/all?where=all&frm=NVSCTAB&query=오버사이즈선글라스' target='_blank'>#오버사이즈</a>";
+                                                    '성숙해 보이고 지적이며 세련된 느낌을 동시에 줍니다. 얼굴의 너비보다 길이가 전체적으로 긴 편으로 이마와 턱의 너비가 같고 턱선이 크게 모나지 않은 얼굴 라인이 특징입니다.';
 												resultSun =
-													'테스트 중입니다.';
+													'가로가 긴 형태의 라운드나 보잉 모양의 오버사이즈 선글라스가 얼굴에 시선이 가로 방향으로 분산되어 긴 얼굴라인을 덜 길어보이게 해 줄 수 있다.';
+												resultTags1 =
+                                                    "<a href='https://search.shopping.naver.com/search/all?query=라운드선글라스' target='_blank'style='color:#8da555'>#라운드 선글라스 </a>";
+												resultTags2 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=보잉선글라스' target='_blank'style='color:#8da555'>#보잉 선글라스 </a>";
+												resultTags3 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=오버사이즈선글라스' target='_blank'style='color:#8da555'>#오버사이즈 선글라스 </a>";
+												resultGls =
+													'시선이 위아래가 아닌 옆으로 퍼질 수 있도록 귀쪽으로 시선을 줄 수 있는 스퀘어형과 이미지를 부드럽게 해주는 라운드형과 잘 어울립니다.';
+												resultTagg1 =
+                                                     "<a href='https://search.shopping.naver.com/search/all?query=스퀘어프레임안경' target='_blank'style='color:#8da555'>#스퀘어프레임 </a>";
+												resultTagg2 =
+												     "<a href='https://search.shopping.naver.com/search/all?query=라운드프레임안경' target='_blank'style='color:#8da555'>#라운드프레임 </a>";
+												resultTagg3 = '';
                                                 break;
                                             case 'angled':
                                                resultTitle = '각진형';
                                                 resultExplain =
-                                                   '광대가 거의 부각되지 않으며 턱이 발달된 유형으로 고급스러운 진중한 느낌을 주는 얼굴형입니다.';
-                        						resultCeleb =
-                                                    '#각진형';
+                                                    '고급스럽고 진중한 느낌을 줍니다. 얼굴의 너비와 길이가 비슷하며 선 자체가 일직선으로 떨어져 보이며 넓은 이마와 턱선이 강한 얼굴 라인이 특징입니다.';
 												resultSun =
-													'테스트 중입니다.';
+													'라운드와 둥근프레임 선글라스는 선이 강한 얼굴이미지를 부드럽고 유연하게 만들어 주며 오버사이즈 선글라스로 시선을 선글라스로 집중시켜 시선을 분산시키는 효과가 있다.';
+												resultTags1 =
+                                                    "<a href='https://search.shopping.naver.com/search/all?query=라운드선글라스' target='_blank'style='color:#ef8857'>#라운드 선글라스 </a>";
+												resultTags2 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=둥근프레임선글라스' target='_blank'style='color:#ef8857'>#둥근프레임 선글라스 </a>";
+												resultTags3 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=오버사이즈선글라스' target='_blank'style='color:#ef8857'>#오버사이즈 선글라스 </a>";
+												resultGls =
+													"부드러운 이미지를 풀어주어 시선이 안경으로 가게 하는 라운드형과 각진 턱을 부드럽게 만들어 주는 오버사이즈형이 잘 어울립니다.";
+												resultTagg1 =
+                                                    "<a href='https://search.shopping.naver.com/search/all?query=라운드프레임안경' target='_blank'style='color:#ef8857'>#라운드프레임 </a>";
+												resultTagg2 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=오버사이즈프레임안경' target='_blank'style='color:#ef8857'>#오버사이즈프레임 </a>";
+												resultTagg3 = '';
                                                 break;
                                             case 'heart':
                                                 resultTitle = '하트형';
                                                 resultExplain =
-                                                    '광대가 발달되어 있으며 얼굴길이가 짧습니다. 사랑스럽고 생기가 넘치는 느낌을 줍니다.'
-                        						resultCeleb =
-                                                    '#하트형';
+                                                    '사랑스럽고 생기가 넘치는 느낌을 줍니다. 얼굴의 너비와 길이가 비슷하며 이마가 눈에 띄는 편으로 광대가 높고 턱이 좁은 얼굴라인이 특징입니다.';
 												resultSun =
-													'테스트 중입니다.';
+													'둥근 하프 프레임 선글라스 이마를 커버하면서 한층 부드럽고 매끄러운 얼굴형으로 연출해 준다.';
+												resultTags1 =
+                                                    "<a href='https://search.shopping.naver.com/search/all?query=라운드선글라스' target='_blank'style='color:#f18a9b'>#라운드 선글라스 </a>";
+												resultTags2 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=타원형선글라스' target='_blank'style='color:#f18a9b'>#타원형 선글라스 </a>";
+												resultTags3 = '';
+												resultGls =
+													'전체적인 프레임에 가려져서 광대뼈가 덜 부각되어 보이는 정사각형프레임과 뾰족한 느낌을 줄 수 있는 스퀘어 타입과 잘 어울립니다.';
+												resultTagg1 =
+                                                     "<a href='https://search.shopping.naver.com/search/all?query=정사각형프레임안경' target='_blank'style='color:#f18a9b'>#정사각형프레임 </a>";
+												resultTagg2 =
+												    "<a href='https://search.shopping.naver.com/search/all?query=스퀘어프레임안경' target='_blank'style='color:#f18a9b'>#각진프레임 </a>";
+												resultTagg3 = '';
                                                 break;
                                             default:
                                                 resultTitle = '알수없음';
                                                 resultExplain = '';
-                                                resultCeleb = '';
+                                                resultSun = '';
+												resultTags1 = '';
+												resultTags2 = '';
+												resultTags3 = '';
+												resultGls = '';
+												resultTagg1 = '';
+												resultTagg2 = '';
+												resultTagg3 = '';
                                         }
                                     }
-                                    var title =
+									
+                                    title =
                                         "<div class='" +
                                         prediction[0].className +
                                         "-face-title'>" +
                                         resultTitle +
                                         '</div>';
-                                    var explain = "<div class='face-explain pt-2'>" + resultExplain + '</div>';
-                                    var celeb =
-                                        "<div class='" +
-                                        prediction[0].className +
-                                        "-face-celeb pt-2 pb-2'>" +
-                                        resultCeleb +
+                                    explain = "<div class='face-explain pt-2'>" + resultExplain + '</div>';
+									
+									sun = "<div class='face-explain-item pt-2'>" + resultSun + '</div>';
+                                    tags =
+                                        "<div class='tag pt-2 pb-2'>" +
+                                        resultTags1 + resultTags2 + resultTags3 +
+                                        '</div>';									
+									gls = "<div class='face-explain-item pt-2'>" + resultGls + '</div>';
+									tagg =
+                                        "<div class='tag pt-2 pb-2'>" +
+                                        resultTagg1 + resultTagg2 + resultTagg3 +
                                         '</div>';
-									 var Sun = "<div class='face-explain pt-2'>" + resultSun + '</div>';
 
                         <!-- 설명/퍼센트 사이 -->
                        
@@ -650,16 +933,16 @@
                                             Math.round(prediction[i].probability.toFixed(2) * 100) +
                                             '%</span></div></div>';
 
-										labelContainer.childNodes[i].innerHTML = label + bar
-										
-								
-										
-										
-										
-            								
+										labelContainer.childNodes[i].innerHTML = label + bar	           								
                                     }
             							<!-- 화면 출력 소스 -->
-									$('.result-message').html(title + explain + celeb);								
+									$('.result-message').html(title);
+									$('.result-message-explain').html(explain);	
+									$('.result-message-sunglass').html(sun + tags);
+									$('.result-message-glass').html(gls + tagg);
+									
+									
+									
             															
                                 }
 			
