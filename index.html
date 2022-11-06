@@ -31,7 +31,7 @@
         </nav>
 
         <section class="section">
-            <h1 class="title">얼굴형 테스트</h1>
+            <h1 class="title">이거랑 어울려요</h1>
             <h2 class="subtitle">사진으로 얼굴형 찾고 선글라스/안경 추천받기</h2>
         </section>
 
@@ -390,6 +390,7 @@
                       function shows3(){
                       	document.getElementById('sun3').style.display='block';
                       	document.getElementById('sun1').style.display='none';
+						document.getElementById('sun2').style.display='none';
                       	document.getElementById('sun4').style.display='none';
                       }
                       function shows4(){
@@ -607,7 +608,7 @@ $(function(){
         <script type="text/javascript">
                                 let URL;
                                 const urlMale = 'https://teachablemachine.withgoogle.com/models/GOTs3qfac/'; //남성
-                                const urlFemale = 'https://teachablemachine.withgoogle.com/models/sA91mArBu'; //여성
+                                const urlFemale = 'https://teachablemachine.withgoogle.com/models/sA91mArBu/'; //여성
                                 let model, labelContainer, maxPredictions;
                                 async function init() {
                                     if (document.getElementById('gender').checked) {
